@@ -283,7 +283,7 @@ export default function Sidebar({ isOpen, setIsOpen }: { isOpen: boolean, setIsO
             <aside
                 className={cn(
                     "fixed top-0 left-0 z-50 h-screen lg:h-full bg-white/70 dark:bg-black/40 backdrop-blur-2xl border-r border-white/20 dark:border-white/10 flex flex-col transition-[width,transform] duration-300 ease-in-out lg:relative lg:flex shadow-[0_8px_30px_rgb(0,0,0,0.04)] shrink-0",
-                    isOpen ? "translate-x-0" : "-translate-x-full",
+                    isOpen ? "translate-x-0" : "-translate-x-full ease-in-out",
                     "lg:translate-x-0",
                     isCollapsed ? "w-20" : "w-64"
                 )}

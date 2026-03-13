@@ -14,10 +14,10 @@ function cn(...inputs: ClassValue[]) {
 
 
 
-
 // navigation items
 const navItems = [
-    { name: "Overview", href: "/", icon: LayoutDashboard, color: "text-blue-500 dark:text-blue-400" },
+   
+    { name: "Dashboard", href: "/", icon: LayoutDashboard, color: "text-blue-500 dark:text-blue-400" },
     { name: "Shared Inbox", href: "/inbox", icon: Inbox, color: "text-purple-500 dark:text-purple-400" },
     {
         name: "Connect Account", icon: Link2, color: "text-orange-500 dark:text-orange-400",
@@ -26,7 +26,12 @@ const navItems = [
             { name: "Connect Google", href: "/connect/google", iconUrl: "https://www.svgrepo.com/show/475656/google-color.svg" }
         ]
     },
-    { name: "Chatbot Manager", href: "/chatbot", icon: Bot, color: "text-emerald-500 dark:text-emerald-400" },
+    {
+        name: "Chatbot Manager", icon: Bot, color: "text-emerald-500 dark:text-emerald-400",
+        subItems: [
+            { name: "WhatsApp Bot", href: "/chatbot", iconUrl: "https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" },
+        ]
+    },
     { name: "Subscriber Manager", href: "/subscribers", icon: Users, color: "text-pink-500 dark:text-pink-400" },
     { name: "Broadcasting", href: "/broadcast", icon: Radio, color: "text-indigo-500 dark:text-indigo-400" },
     { name: "Live Chat", href: "/chat", icon: MessageSquare, color: "text-teal-500 dark:text-teal-400" },
@@ -35,8 +40,8 @@ const navItems = [
     { name: "Integrations", href: "/integrations", icon: Puzzle, color: "text-amber-500 dark:text-amber-400" },
     { name: "Control Panel", href: "/settings", icon: Settings, color: "text-slate-500 dark:text-slate-400" },
     { name: "WhatsApp", href: "/whatsapp-main", iconUrl: "https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" },
-];
 
+];
 
 
 
@@ -57,8 +62,6 @@ interface NavItemType {
     color?: string;
     subItems?: SubItemType[];
 }
-
-
 
 
 

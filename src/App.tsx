@@ -7,6 +7,8 @@ import LoadingScreen from "./components/ui/LoadingScreen"
 
 // lazy load pages
 const Home = lazy(() => import("./pages/index"))
+const BotManager = lazy(() => import("./pages/BotManager"))
+const FlowBuilder = lazy(() => import("./pages/FlowBuilder"))
 const NotFound = lazy(() => import("./pages/NotFound"))
 
 
@@ -43,8 +45,12 @@ function App() {
           <Route element={<MainLayout />} >
          
             <Route index element={<Home />} />
+            <Route path="/chatbot" element={<BotManager />} />
          
           </Route>
+
+          {/* Flow Builder (Full Screen without MainLayout) */}
+          <Route path="/chatbot/flow" element={<FlowBuilder />} />
 
 
           {/* Auth Routes */}

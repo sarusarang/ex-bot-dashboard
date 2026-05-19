@@ -7,11 +7,13 @@ import { cn } from "@/lib/utils"
 interface AnimatedThemeTogglerProps
   extends React.ComponentPropsWithoutRef<"button"> {
   duration?: number
+  onThemeChange?: (isDark: boolean) => void
 }
 
 export const AnimatedThemeToggler = ({
   className,
   duration = 400,
+  onThemeChange,
   ...props
 }: AnimatedThemeTogglerProps) => {
   const [isDark, setIsDark] = useState(false)
@@ -31,7 +33,9 @@ export const AnimatedThemeToggler = ({
     }
 
     const updateTheme = () => {
-      setIsDark(document.documentElement.classList.contains("dark"))
+      const dark = document.documentElement.classList.contains("dark")
+      setIsDark(dark)
+      onThemeChange?.(dark)
     }
 
     updateTheme()
@@ -114,5 +118,7 @@ export const AnimatedThemeToggler = ({
       <span className="sr-only">Toggle theme</span>
     </button>
   )
+
+  
 
 }
